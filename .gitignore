@@ -49,4 +49,5 @@ backend/venv/
 backend/__pycache__/
 **/__pycache__/
 *.pyc
-backend/run_tests.py
+backend/run_tests.py__pycache__/ 
+*.pyc 
