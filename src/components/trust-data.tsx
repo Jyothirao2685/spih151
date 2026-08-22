@@ -298,27 +298,27 @@ export default function TrustData() {
           src="/tube_1.png"
           alt=""
           aria-hidden="true"
-          style={{ maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)" }}
+          style={{ maskImage: "radial-gradient(ellipse at center, black 65%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 65%, transparent 100%)" }}
           className="
             absolute
 
-            right-[5%]
+            right-[-65px]
             top-[9%]
             w-[200px]
 
-            md:right-[8%]
+            md:right-[-55px]
             md:top-[10%]
             md:w-[270px]
 
-            lg:right-[10%]
+            lg:right-[-45px]
             lg:top-[9%]
             lg:w-[340px]
 
-            xl:right-[12%]
+            xl:right-[-35px]
             xl:top-[7%]
             xl:w-[390px]
 
-            2xl:right-[15%]
+            2xl:right-[-25px]
             2xl:w-[420px]
           "
         />
@@ -334,19 +334,19 @@ export default function TrustData() {
           src="/tube_2.png"
           alt=""
           aria-hidden="true"
-          style={{ maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)" }}
+          style={{ maskImage: "radial-gradient(ellipse at center, black 75%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 75%, transparent 100%)" }}
           className="
             absolute
 
-            right-[2%]
+            right-[-65px]
             top-[45%]
             w-[170px]
 
-            md:right-[5%]
+            md:right-[-50px]
             md:top-[44%]
             md:w-[220px]
 
-            lg:right-[5%]
+            lg:right-[-30px]
             lg:top-[42%]
             lg:w-[280px]
 
