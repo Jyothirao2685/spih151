@@ -101,17 +101,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Floating Text Bottom Right */}
-        <motion.div
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ duration: 0.8, delay: 0.8 }}
-           className="static p-6 text-center md:text-left md:p-0 md:absolute bottom-12 right-12 lg:right-20 max-w-[240px] z-20"
-        >
-          <p className="text-[#3b5463] font-medium text-sm leading-relaxed drop-shadow-sm">
-            AI platform helping researchers explore compounds, retrieve evidence, and streamline workflows.
-          </p>
-        </motion.div>
 
       </div>
     </div>
