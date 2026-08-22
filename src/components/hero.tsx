@@ -22,6 +22,7 @@ export default function Hero() {
               src="/hero.png" 
               alt="Biomedical DNA Background"
               className="w-full h-full object-cover object-center mix-blend-multiply"
+              style={{ maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)" }}
             />
           </motion.div>
         </div>
