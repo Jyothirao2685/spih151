@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 // import removed
 import React from 'react';
 
@@ -92,9 +93,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-12 md:mt-16 flex flex-col sm:flex-row gap-4"
           >
-            <button className="bg-black text-white hover:bg-gray-800 rounded-full px-10 py-4 text-sm font-bold tracking-widest uppercase transition shadow-lg flex items-center gap-3">
-              LAUNCH BIOMINDQ <span>&rarr;</span>
-            </button>
+            <Link href="/launch">
+              <button className="bg-black text-white hover:bg-gray-800 rounded-full px-10 py-4 text-sm font-bold tracking-widest uppercase transition shadow-lg flex items-center gap-3">
+                LAUNCH BIOMINDQ <span>&rarr;</span>
+              </button>
+            </Link>
           </motion.div>
         </div>
 

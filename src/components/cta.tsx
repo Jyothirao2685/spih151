@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function CTA() {
   return (
@@ -47,17 +48,19 @@ export default function CTA() {
             </p>
           </motion.div>
           
-          <motion.button
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 py-5 bg-black text-white text-xl font-bold rounded-full tracking-tight hover:bg-gray-900 transition-colors flex items-center gap-3 whitespace-nowrap"
-          >
-            Launch BioMindQ <span>&rarr;</span>
-          </motion.button>
+          <Link href="/launch">
+            <motion.button
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-5 bg-black text-white text-xl font-bold rounded-full tracking-tight hover:bg-gray-900 transition-colors flex items-center gap-3 whitespace-nowrap"
+            >
+              Launch BioMindQ <span>&rarr;</span>
+            </motion.button>
+          </Link>
         </div>
         
       </div>
