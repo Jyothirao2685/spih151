@@ -299,6 +299,7 @@ export default function TrustData() {
           src="/tube_1.png"
           alt=""
           aria-hidden="true"
+          style={{ maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)" }}
           className="
             absolute
 
@@ -334,6 +335,7 @@ export default function TrustData() {
           src="/tube_2.png"
           alt=""
           aria-hidden="true"
+          style={{ maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)" }}
           className="
             absolute
 
