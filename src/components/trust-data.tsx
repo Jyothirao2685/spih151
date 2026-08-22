@@ -217,7 +217,6 @@ export default function TrustData() {
         z-20
         min-h-screen
         w-full
-        overflow-hidden
         bg-transparent
         py-24
         font-sans
@@ -303,23 +302,23 @@ export default function TrustData() {
           className="
             absolute
 
-            right-[-65px]
+            right-[5%]
             top-[9%]
             w-[200px]
 
-            md:right-[-55px]
+            md:right-[8%]
             md:top-[10%]
             md:w-[270px]
 
-            lg:right-[-45px]
+            lg:right-[10%]
             lg:top-[9%]
             lg:w-[340px]
 
-            xl:right-[-35px]
+            xl:right-[12%]
             xl:top-[7%]
             xl:w-[390px]
 
-            2xl:right-[-25px]
+            2xl:right-[15%]
             2xl:w-[420px]
           "
         />
@@ -339,15 +338,15 @@ export default function TrustData() {
           className="
             absolute
 
-            right-[-65px]
+            right-[2%]
             top-[45%]
             w-[170px]
 
-            md:right-[-50px]
+            md:right-[5%]
             md:top-[44%]
             md:w-[220px]
 
-            lg:right-[-30px]
+            lg:right-[5%]
             lg:top-[42%]
             lg:w-[280px]
 
