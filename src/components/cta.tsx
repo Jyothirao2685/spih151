@@ -45,7 +45,7 @@ export default function CTA() {
             </p>
           </motion.div>
           
-          <Link href="/launch">
+          <Link href="/chat">
             <motion.button
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
