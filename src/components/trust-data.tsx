@@ -43,13 +43,13 @@ export default function TrustData() {
           src="/tube_1.png"
           alt="Test tube 1"
           data-speed="18"
-          className="tube absolute top-[70vh] right-[-15%] md:right-[-10%] lg:right-[-5%] w-64 md:w-80 lg:w-[450px] rotate-12"
+          className="tube absolute top-[70vh] right-[5%] lg:right-[10%] w-64 md:w-80 lg:w-[450px] rotate-12"
         />
         <img
           src="/tube_2.png"
           alt="Test tube 2"
           data-speed="4"
-          className="tube absolute top-[50vh] right-[-25%] md:right-[-15%] lg:right-[-8%] w-48 md:w-64 lg:w-[350px] rotate-3 opacity-80"
+          className="tube absolute top-[50vh] right-[2%] lg:right-[5%] w-48 md:w-64 lg:w-[350px] rotate-3"
         />
       </div>
 
