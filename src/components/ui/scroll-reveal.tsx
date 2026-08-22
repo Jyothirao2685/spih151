@@ -30,7 +30,7 @@ export default function ScrollReveal({
       viewport={{ once: true, margin: "-80px" }}
       transition={{
         duration: 0.7,
-        ease: [0.21, 0.47, 0.32, 0.98],
+        ease: [0.21, 0.47, 0.32, 0.98] as const,
         delay: delay,
       }}
       className={cn(className)}

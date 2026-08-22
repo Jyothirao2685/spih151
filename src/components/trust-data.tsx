@@ -1,74 +1,99 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { useRef } from "react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function TrustData() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  useGSAP(() => {
+    const images = gsap.utils.toArray(".tube") as HTMLElement[];
+    images.forEach((img, index) => {
+      const speed = parseFloat(img.dataset.speed || "1");
+      gsap.to(img, {
+        y: () => -100 * speed,
+        rotate: index === 1 ? -10 : 0, // customized subtle rotation
+        ease: "none",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          scrub: 1,
+          start: "top bottom",
+          end: "bottom top",
+        }
+      });
+    });
+  }, { scope: containerRef });
 
   return (
-    <section className="py-24 lg:py-32 bg-[#F5F6F6]">
-      <motion.div
-        className="max-w-5xl mx-auto px-6"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        <motion.h2
-          variants={itemVariants}
-          className="text-center text-3xl lg:text-4xl font-bold tracking-tight uppercase"
-        >
-          GROUNDED IN REAL BIOMEDICAL DATA
-        </motion.h2>
+    <section ref={containerRef} className="relative z-20 w-full min-h-screen bg-transparent py-24 flex flex-col font-sans">
+      {/* Background Blobs - isolated in their own overflow container so they don't bleed out, but tubes can */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[120px] opacity-40" />
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-400 rounded-full blur-[120px] opacity-30" />
+      </div>
 
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-wrap gap-6 justify-center mt-12"
-        >
-          <div className="rounded-full bg-white border border-gray-200 px-6 py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 shadow-sm">
-            PUBMED
-          </div>
-          <div className="rounded-full bg-white border border-gray-200 px-6 py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 shadow-sm">
-            CHEMBL
-          </div>
-          <div className="rounded-full bg-white border border-gray-200 px-6 py-3 text-sm font-semibold tracking-widest uppercase text-gray-700 shadow-sm">
-            CURATED DATA
-          </div>
-        </motion.div>
+      {/* Floating test tubes with exact GSAP parallax - no overflow hidden so they can float above section */}
+      <div className="absolute inset-0 z-[9999] pointer-events-none">
+        <img
+          src="/tube_1.png"
+          alt="Test tube 1"
+          data-speed="18"
+          className="tube absolute top-[70vh] right-[-15%] md:right-[-10%] lg:right-[-5%] w-64 md:w-80 lg:w-[450px] rotate-12"
+        />
+        <img
+          src="/tube_2.png"
+          alt="Test tube 2"
+          data-speed="4"
+          className="tube absolute top-[50vh] right-[-25%] md:right-[-15%] lg:right-[-8%] w-48 md:w-64 lg:w-[350px] rotate-3 opacity-80"
+        />
+      </div>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-center text-gray-500 max-w-2xl mx-auto mt-8"
-        >
-          BioMindQ retrieves relevant biomedical information before generating its response.
-        </motion.p>
+      <div className="max-w-7xl mx-auto px-6 w-full flex-grow flex flex-col justify-between relative z-20 h-full min-h-[70vh]">
+        <div className="mt-12 md:mt-24">
+          <motion.h2 
+            className="text-7xl md:text-8xl lg:text-[110px] font-medium tracking-tighter leading-[0.85] text-black max-w-4xl"
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Grounded in<br />Real Science
+          </motion.h2>
+        </div>
 
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-row items-center justify-center gap-6 mt-16"
-        >
-          <div className="rounded-xl bg-cyan-50 text-cyan-700 px-5 py-2.5 text-sm font-bold tracking-wide">
-            RETRIEVED EVIDENCE
-          </div>
-          <div className="text-2xl text-gray-300 font-light">
-            ≠
-          </div>
-          <div className="rounded-xl bg-gray-100 text-gray-600 px-5 py-2.5 text-sm font-bold tracking-wide">
-            AI SYNTHESIS
-          </div>
-        </motion.div>
-      </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mt-20 lg:mt-32">
+          {/* Point 1 */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold text-black mb-6">Verified Sources</h3>
+            <p className="text-[#455f6e] text-lg md:text-xl leading-relaxed">
+              Every insight generated by BioMindQ is strictly cross-referenced against millions of peer-reviewed publications. We ensure that you can trace every AI-generated claim directly back to a verified biomedical source.
+            </p>
+          </motion.div>
+
+          {/* Point 2 */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-bold text-black mb-6">Compound Intelligence</h3>
+            <p className="text-[#455f6e] text-lg md:text-xl leading-relaxed">
+              Instantly analyze targets, mechanism of actions, and safety profiles. BioMindQ pulls structured chemical and pharmacological data directly from trusted databases like ChEMBL to accelerate your workflow.
+            </p>
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

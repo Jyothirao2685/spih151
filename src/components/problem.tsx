@@ -1,78 +1,88 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function Problem() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
-
   return (
-    <section className="bg-[#F5F6F6] py-10">
-      <motion.div
-        className="bg-white rounded-3xl mx-4 lg:mx-8 py-20 lg:py-28 px-8 lg:px-16 shadow-sm border border-black/5"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        <motion.h2
-          variants={itemVariants}
-          className="text-3xl lg:text-5xl font-bold tracking-tight uppercase max-w-3xl"
-        >
-          BIOMEDICAL RESEARCH IS FRAGMENTED.
-        </motion.h2>
+    <section className="relative w-full min-h-screen bg-[#f4f4f4]  py-32 flex flex-col font-sans ">
+      {/* Background Blobs - positioned differently from trust-data to create flow */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[150px] opacity-20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-300 rounded-full blur-[130px] opacity-20 pointer-events-none" />
 
-        <motion.p
-          variants={itemVariants}
-          className="text-lg text-gray-500 max-w-2xl mt-6 leading-relaxed"
-        >
-          Researchers work across thousands of papers, compound databases and scientific records. Finding and connecting the right information takes time.
-        </motion.p>
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
+        
+        {/* Header */}
+        <div className="mb-24">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mb-6 flex items-center gap-3"
+          >
+            <span className="text-[#007b8f] font-bold text-sm tracking-widest uppercase">2. The Problem</span>
+          </motion.div>
+          
+          <motion.h2 
+            className="text-6xl md:text-8xl lg:text-[100px] font-medium tracking-tighter leading-[0.9] text-black max-w-5xl"
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Biomedical Research<br />Is Fragmented.
+          </motion.h2>
+        </div>
 
-        <motion.div
-          variants={itemVariants}
-          className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mt-20"
-        >
-          <div>
-            <div className="text-5xl lg:text-6xl font-bold text-gray-200 tracking-tighter">01</div>
-            <h3 className="text-sm font-bold tracking-widest uppercase mt-4">INFORMATION OVERLOAD</h3>
-            <p className="text-sm text-gray-500 mt-2 leading-relaxed">
-              Relevant research is difficult to process manually.
+        {/* 3 Points - Editorial Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 mt-auto">
+          {/* Point 1 */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col  pt-8"
+          >
+            <span className="text-4xl lg:text-5xl font-light text-black/30 mb-6 font-serif">01</span>
+            <h3 className="text-2xl font-bold text-black mb-4 tracking-tight leading-tight">Too much information</h3>
+            <p className="text-[#455f6e] text-lg leading-relaxed">
+              Thousands of papers and datasets are published constantly, making it impossible to manually process all available insights.
             </p>
-          </div>
-          <div>
-            <div className="text-5xl lg:text-6xl font-bold text-gray-200 tracking-tighter">02</div>
-            <h3 className="text-sm font-bold tracking-widest uppercase mt-4">FRAGMENTED DATA</h3>
-            <p className="text-sm text-gray-500 mt-2 leading-relaxed">
-              Important information is spread across different sources.
-            </p>
-          </div>
-          <div>
-            <div className="text-5xl lg:text-6xl font-bold text-gray-200 tracking-tighter">03</div>
-            <h3 className="text-sm font-bold tracking-widest uppercase mt-4">UNVERIFIED AI</h3>
-            <p className="text-sm text-gray-500 mt-2 leading-relaxed">
-              AI can generate answers without showing where the information came from.
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        <motion.h3
-          variants={itemVariants}
-          className="text-2xl lg:text-3xl font-bold tracking-tight mt-24 text-center"
-        >
-          BioMindQ brings the <span className="text-cyan-600">evidence</span> together.
-        </motion.h3>
-      </motion.div>
+          {/* Point 2 */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col  pt-8"
+          >
+            <span className="text-4xl lg:text-5xl font-light text-black/30 mb-6 font-serif">02</span>
+            <h3 className="text-2xl font-bold text-black mb-4 tracking-tight leading-tight">Data is scattered</h3>
+            <p className="text-[#455f6e] text-lg leading-relaxed">
+              Literature, clinical trials, and compound data live in entirely different, disconnected sources and databases.
+            </p>
+          </motion.div>
+
+          {/* Point 3 */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col  pt-8"
+          >
+            <span className="text-4xl lg:text-5xl font-light text-black/30 mb-6 font-serif">03</span>
+            <h3 className="text-2xl font-bold text-black mb-4 tracking-tight leading-tight">AI can hallucinate</h3>
+            <p className="text-[#455f6e] text-lg leading-relaxed">
+              Generic LLMs invent facts. Researchers need answers they can strictly verify against grounded medical evidence.
+            </p>
+          </motion.div>
+        </div>
+
+      </div>
     </section>
   );
 }

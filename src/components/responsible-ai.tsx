@@ -1,60 +1,53 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { CheckCircle, AlertTriangle, XCircle } from 'lucide-react';
+import { motion } from "framer-motion";
 
 export default function ResponsibleAI() {
   return (
-    <section className="py-24 lg:py-32 mx-4 lg:mx-8">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="bg-white rounded-3xl container mx-auto py-16 lg:py-20 px-8 lg:px-16"
-      >
-        <div className="max-w-3xl">
-          <h2 className="text-3xl lg:text-5xl font-bold tracking-tight uppercase">
-            WHEN THE EVIDENCE ISN'T THERE,<br />
-            BIOMINDQ SAYS SO.
-          </h2>
-        </div>
+    <section className="relative w-full min-h-screen bg-[#f4f4f4]  py-32 flex flex-col font-sans ">
+      {/* Background Blobs */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] bg-blue-400 rounded-full blur-[200px] opacity-10 pointer-events-none" />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-          {/* High Evidence */}
-          <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-6">
-            <CheckCircle className="w-6 h-6 text-emerald-500 mb-4" />
-            <h3 className="text-emerald-700 font-bold text-sm tracking-widest uppercase mb-2">HIGH EVIDENCE</h3>
-            <p className="text-sm text-emerald-600/80">Multiple relevant sources support the finding.</p>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
+        
+        {/* Header */}
+        <div className="mb-24">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mb-6 flex items-center gap-3"
+          >
+            <span className="text-[#007b8f] font-bold text-sm tracking-widest uppercase">6. Responsible AI</span>
+          </motion.div>
           
-          {/* Limited Evidence */}
-          <div className="rounded-2xl bg-amber-50 border border-amber-100 p-6">
-            <AlertTriangle className="w-6 h-6 text-amber-500 mb-4" />
-            <h3 className="text-amber-700 font-bold text-sm tracking-widest uppercase mb-2">LIMITED EVIDENCE</h3>
-            <p className="text-sm text-amber-600/80">Evidence exists but is limited or inconsistent.</p>
-          </div>
-
-          {/* Insufficient Evidence */}
-          <div className="rounded-2xl bg-red-50 border border-red-100 p-6">
-            <XCircle className="w-6 h-6 text-red-500 mb-4" />
-            <h3 className="text-red-700 font-bold text-sm tracking-widest uppercase mb-2">INSUFFICIENT EVIDENCE</h3>
-            <p className="text-sm text-red-600/80">Available data is not enough to support a conclusion.</p>
-          </div>
+          <motion.h2 
+            className="text-6xl md:text-8xl lg:text-[100px] font-medium tracking-tighter leading-[0.9] text-black max-w-5xl"
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            When Evidence Isn&apos;t<br />Enough, We Say So.
+          </motion.h2>
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-2xl lg:text-3xl font-bold tracking-tight uppercase text-gray-300">
-            NO SUFFICIENT EVIDENCE.<br />
-            NO CONFIDENT CLAIM.
-          </p>
+        {/* Content */}
+        <div className="mt-auto  pt-12 max-w-4xl">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <p className="text-3xl md:text-4xl text-black font-medium leading-tight tracking-tight">
+              BioMindQ is a research and informational tool — not medical advice. <span className="text-black/40">That&apos;s it.</span>
+            </p>
+          </motion.div>
         </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-400">
-            Research & informational use only. BioMindQ does not provide medical diagnosis, treatment recommendations, or clinical advice.
-          </p>
-        </div>
-      </motion.div>
+        
+      </div>
     </section>
   );
 }

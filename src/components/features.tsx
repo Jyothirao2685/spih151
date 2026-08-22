@@ -1,119 +1,100 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { MessageSquare, FlaskConical, BookOpen, Link2, BarChart3 } from 'lucide-react';
+import { motion } from "framer-motion";
 
 export default function Features() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
-  };
-
   return (
-    <section className="py-24 bg-[#F5F6F6]">
-      <div className="mx-4 lg:mx-8 py-16 lg:py-24 px-8 lg:px-16 bg-white rounded-3xl">
-        <div className="mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl lg:text-5xl font-bold tracking-tight uppercase text-neutral-950"
+    <section className="relative w-full min-h-screen bg-[#f4f4f4]  py-32 flex flex-col font-sans ">
+      {/* Background Blobs */}
+      <div className="absolute top-[20%] left-[-10%] w-[800px] h-[800px] bg-blue-600 rounded-full blur-[200px] opacity-10 pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-cyan-500 rounded-full blur-[150px] opacity-20 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
+        
+        {/* Header */}
+        <div className="mb-24">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mb-6 flex items-center gap-3"
           >
-            Built for Biomedical Research.
+            <span className="text-[#007b8f] font-bold text-sm tracking-widest uppercase">4. Core Features</span>
+          </motion.div>
+          
+          <motion.h2 
+            className="text-6xl md:text-8xl lg:text-[100px] font-medium tracking-tighter leading-[0.9] text-black max-w-5xl"
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            One Place for<br />Biomedical Research.
           </motion.h2>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14"
-        >
-          {/* Feature 01 */}
-          <motion.div variants={itemVariants} className="border-t border-gray-100 pt-8">
-            <MessageSquare className="w-8 h-8 text-cyan-500/60 mb-4" />
-            <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-600">
-              Feature 01
-            </div>
-            <h3 className="text-xl lg:text-2xl font-bold tracking-tight mt-2 text-neutral-900">
-              Biomedical Q&A
-            </h3>
-            <p className="text-sm lg:text-base text-gray-500 mt-3 leading-relaxed">
-              Ask research questions and receive answers grounded in retrieved evidence.
-            </p>
-          </motion.div>
-
-          {/* Feature 02 */}
-          <motion.div variants={itemVariants} className="border-t border-gray-100 pt-8">
-            <FlaskConical className="w-8 h-8 text-cyan-500/60 mb-4" />
-            <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-600">
-              Feature 02
-            </div>
-            <h3 className="text-xl lg:text-2xl font-bold tracking-tight mt-2 text-neutral-900">
-              Compound Intelligence
-            </h3>
-            <p className="text-sm lg:text-base text-gray-500 mt-3 leading-relaxed">
-              Explore compound properties, targets, interactions and research.
-            </p>
-          </motion.div>
-
-          {/* Feature 03 - Full Width */}
+        {/* Features - 2x2 Editorial Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 mt-auto">
+          
+          {/* Feature 1 */}
           <motion.div
-            variants={itemVariants}
-            className="md:col-span-2 border-t border-gray-100 pt-8 bg-cyan-50/50 -mx-8 px-8 pb-8 rounded-2xl mt-4 lg:mt-0"
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col  pt-8"
           >
-            <BookOpen className="w-8 h-8 text-cyan-500/60 mb-4 mt-8" />
-            <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-600">
-              Feature 03
-            </div>
-            <h3 className="text-2xl lg:text-3xl font-bold tracking-tight mt-2 text-neutral-900">
-              Research Retrieval
-            </h3>
-            <p className="text-base lg:text-lg text-gray-500 mt-3 leading-relaxed max-w-3xl">
-              Find relevant biomedical literature without manually searching through everything.
+            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Biomedical Q&A</h3>
+            <p className="text-[#455f6e] text-xl leading-relaxed">
+              Ask questions about diseases, compounds and research.
             </p>
           </motion.div>
 
-          {/* Feature 04 */}
-          <motion.div variants={itemVariants} className="border-t border-gray-100 pt-8 mt-4 lg:mt-0">
-            <Link2 className="w-8 h-8 text-cyan-500/60 mb-4" />
-            <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-600">
-              Feature 04
-            </div>
-            <h3 className="text-xl lg:text-2xl font-bold tracking-tight mt-2 text-neutral-900">
-              Source Traceability
-            </h3>
-            <p className="text-sm lg:text-base text-gray-500 mt-3 leading-relaxed">
-              See exactly where the information behind an answer came from.
+          {/* Feature 2 */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col  pt-8"
+          >
+            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Compound Intelligence</h3>
+            <p className="text-[#455f6e] text-xl leading-relaxed">
+              Explore compound properties, targets and research.
             </p>
           </motion.div>
 
-          {/* Feature 05 */}
-          <motion.div variants={itemVariants} className="border-t border-gray-100 pt-8 mt-4 lg:mt-0">
-            <BarChart3 className="w-8 h-8 text-cyan-500/60 mb-4" />
-            <div className="text-[10px] font-bold tracking-[0.2em] uppercase text-cyan-600">
-              Feature 05
-            </div>
-            <h3 className="text-xl lg:text-2xl font-bold tracking-tight mt-2 text-neutral-900">
-              Evidence & Uncertainty
-            </h3>
-            <p className="text-sm lg:text-base text-gray-500 mt-3 leading-relaxed">
-              Understand whether available evidence is strong, limited or insufficient.
+          {/* Feature 3 */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col  pt-8"
+          >
+            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Evidence & Sources</h3>
+            <p className="text-[#455f6e] text-xl leading-relaxed">
+              See the data and sources used to generate an answer.
             </p>
           </motion.div>
-        </motion.div>
+
+          {/* Feature 4 */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="flex flex-col  pt-8"
+          >
+            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Uncertainty</h3>
+            <p className="text-[#455f6e] text-xl leading-relaxed">
+              Know when evidence is strong, limited or insufficient.
+            </p>
+          </motion.div>
+
+        </div>
+
       </div>
     </section>
   );
