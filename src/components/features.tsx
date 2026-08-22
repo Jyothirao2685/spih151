@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Features() {
   return (
-    <section className="relative w-full min-h-screen bg-[#f4f4f4]  py-32 flex flex-col font-sans ">
+    <section id="features" className="relative w-full min-h-screen bg-[#f4f4f4] py-32 flex flex-col font-sans border-t border-gray-200">
       {/* Background Blobs */}
       <div className="absolute top-[20%] left-[-10%] w-[800px] h-[800px] bg-blue-600 rounded-full blur-[200px] opacity-10 pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-cyan-500 rounded-full blur-[150px] opacity-20 pointer-events-none" />

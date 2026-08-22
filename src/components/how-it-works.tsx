@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function HowItWorks() {
   return (
-    <section className="relative w-full min-h-screen bg-[#f4f4f4] overflow-hidden py-32 flex flex-col font-sans ">
+    <section id="how-it-works" className="relative w-full min-h-screen bg-[#f4f4f4] overflow-hidden py-32 flex flex-col font-sans border-t border-gray-200">
       {/* Background Blobs */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-200 rounded-full blur-[150px] opacity-30 pointer-events-none" />
 

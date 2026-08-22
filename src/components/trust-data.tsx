@@ -30,7 +30,7 @@ export default function TrustData() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative z-20 w-full min-h-screen bg-transparent py-24 flex flex-col font-sans">
+    <section id="about" ref={containerRef} className="relative z-20 w-full min-h-screen bg-transparent py-24 flex flex-col font-sans">
       {/* Background Blobs - isolated in their own overflow container so they don't bleed out, but tubes can */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[120px] opacity-40" />
