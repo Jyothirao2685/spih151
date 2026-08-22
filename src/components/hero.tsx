@@ -7,14 +7,10 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <div className="w-full min-h-[600px] md:min-h-screen relative flex flex-col bg-[#f4f4f4]">
+    <div className="w-full min-h-[600px] md:min-h-screen relative flex flex-col bg-transparent">
       {/* Full bleed container - Removed overflow-hidden so artwork can spill over if needed */}
       <div className="w-full h-full flex-1 relative flex flex-col">
         
-        {/* Background Blobs */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-cyan-200 rounded-full blur-[150px] opacity-40 pointer-events-none" />
-        <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-blue-200 rounded-full blur-[150px] opacity-30 pointer-events-none" />
-
         {/* DNA Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
           <motion.div 
@@ -27,7 +23,7 @@ export default function Hero() {
               src="/hero.png" 
               alt="Biomedical DNA Background"
               className="w-full h-full object-cover object-center mix-blend-multiply"
-              style={{ maskImage: "linear-gradient(to bottom, black 80%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 80%, transparent 100%)" }}
+              style={{ maskImage: "linear-gradient(to bottom, black 50%, transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, black 50%, transparent 100%)" }}
             />
           </motion.div>
         </div>

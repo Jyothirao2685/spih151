@@ -4,15 +4,9 @@ import { motion } from "framer-motion";
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative w-full min-h-screen bg-[#f4f4f4] overflow-hidden py-32 flex flex-col font-sans border-t border-gray-200">
-      {/* Background Blobs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-200 rounded-full blur-[150px] opacity-30 pointer-events-none" />
-
+    <section id="how-it-works" className="relative w-full min-h-screen bg-transparent overflow-hidden py-32 flex flex-col font-sans border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full min-h-[70vh]">
         
-        {/* Thick Editorial Line */}
-        <div className="w-full h-1.5 bg-black mb-16" />
-
         {/* Header */}
         <div>
           <motion.div

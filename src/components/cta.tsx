@@ -5,10 +5,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="relative w-full min-h-[80vh] bg-[#f4f4f4]  py-32 flex flex-col font-sans ">
-      {/* Background Blobs */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-300 rounded-full blur-[200px] opacity-20 pointer-events-none" />
-
+    <section className="relative w-full min-h-[80vh] bg-transparent py-32 flex flex-col font-sans">
       <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
         
         {/* Header */}

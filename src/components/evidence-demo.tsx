@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 
 export default function EvidenceDemo() {
   return (
-    <section className="relative w-full min-h-screen bg-[#f4f4f4] overflow-hidden py-32 flex flex-col font-sans ">
-      {/* Background Blobs */}
-      <div className="absolute top-1/4 right-[10%] w-[600px] h-[600px] bg-cyan-300 rounded-full blur-[150px] opacity-30 pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[10%] w-[500px] h-[500px] bg-blue-300 rounded-full blur-[150px] opacity-20 pointer-events-none" />
+    <section className="relative w-full min-h-screen bg-transparent overflow-hidden py-32 flex flex-col font-sans ">
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
         

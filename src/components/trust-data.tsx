@@ -34,7 +34,7 @@ export default function TrustData() {
       gsap.set(backTube, {
         x: 0,
         y: 0,
-        rotation: 18,
+        rotation: -75,
         scale: 1,
         transformOrigin: "50% 50%",
       });
@@ -42,7 +42,7 @@ export default function TrustData() {
       gsap.set(frontTube, {
         x: 0,
         y: 0,
-        rotation: 8,
+        rotation: 12,
         scale: 1,
         transformOrigin: "50% 50%",
       });
@@ -73,7 +73,7 @@ export default function TrustData() {
           trigger: containerRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 1.2,
+          scrub: 2.5,
           invalidateOnRefresh: true,
         },
       });
@@ -85,8 +85,9 @@ export default function TrustData() {
       tl.to(
         backTube,
         {
-          y: -170,
-          rotation: 12,
+          x: -10,
+          y: -40,
+          rotation: -65,
           ease: "none",
           duration: 0.5,
         },
@@ -102,7 +103,7 @@ export default function TrustData() {
         {
           x: -90,
           y: -230,
-          rotation: -4,
+          rotation: 2,
           ease: "none",
           duration: 0.5,
         },
@@ -126,7 +127,7 @@ export default function TrustData() {
         backTube,
         {
           scale: 1.035,
-          rotation: 9,
+          rotation: -60,
           ease: "power2.out",
           duration: 0.12,
         },
@@ -137,7 +138,7 @@ export default function TrustData() {
         frontTube,
         {
           scale: 1.04,
-          rotation: -7,
+          rotation: -2,
           ease: "power2.out",
           duration: 0.12,
         },
@@ -175,9 +176,9 @@ export default function TrustData() {
       tl.to(
         backTube,
         {
-          y: -340,
-          x: 15,
-          rotation: 4,
+          y: -100,
+          x: -20,
+          rotation: -55,
           scale: 1,
           ease: "none",
           duration: 0.5,
@@ -190,7 +191,7 @@ export default function TrustData() {
         {
           x: -180,
           y: -430,
-          rotation: -13,
+          rotation: -6,
           scale: 1,
           ease: "none",
           duration: 0.5,
@@ -223,29 +224,15 @@ export default function TrustData() {
       "
     >
       {/* =========================================================
-          BACKGROUND GLOWS
+          BACKGROUND GLOWS & GRID
       ========================================================= */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Blue glow */}
+        {/* Cyan glow (Animates when tubes cross) */}
         <div
           className="
             absolute
-            -bottom-20
-            -left-20
-            h-[500px]
-            w-[500px]
-            rounded-full
-            bg-blue-600
-            opacity-40
-            blur-[120px]
-          "
-        />
-        {/* Cyan glow */}
-        <div
-          className="
-            absolute
-            right-0
+            right-[-100px]
             top-1/2
             h-[500px]
             w-[500px]
@@ -256,14 +243,40 @@ export default function TrustData() {
             blur-[120px]
           "
         />
+
+        {/* Meeting glow */}
+        <div
+          ref={glowRef}
+          className="
+            absolute
+            right-[7%]
+            top-[43%]
+            h-32
+            w-32
+            rounded-full
+            bg-cyan-300
+            blur-3xl
+          "
+        />
       </div>
 
       {/* =========================================================
-          TUBES
+          TEST TUBES
       ========================================================= */}
-      <div className="pointer-events-none absolute inset-0 z-[9999]">
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          z-10
+          overflow-visible
+        "
+      >
         {/* -------------------------------------------------------
-            BACK TUBE
+            BACK / BORDERLESS TUBE
+
+            This is pushed right against the edge.
         ------------------------------------------------------- */}
 
         <img
@@ -273,33 +286,35 @@ export default function TrustData() {
           aria-hidden="true"
           className="
             absolute
-            blur-[8px]
-            opacity-70
-            -rotate-[15deg]
+            blur-[2px]
+            opacity-90
 
-            right-[-30px]
-            top-[15%]
-            w-[200px]
+            right-[40px]
+            top-[20%]
+            w-[180px]
 
-            md:right-[-20px]
-            md:top-[12%]
-            md:w-[270px]
+            md:right-[80px]
+            md:top-[22%]
+            md:w-[250px]
 
-            lg:right-[-10px]
-            lg:top-[10%]
-            lg:w-[340px]
+            lg:right-[120px]
+            lg:top-[22%]
+            lg:w-[320px]
 
-            xl:right-[10px]
-            xl:top-[8%]
-            xl:w-[390px]
+            xl:right-[150px]
+            xl:top-[20%]
+            xl:w-[370px]
 
-            2xl:right-[40px]
-            2xl:w-[420px]
+            2xl:right-[180px]
+            2xl:top-[18%]
+            2xl:w-[400px]
           "
         />
 
         {/* -------------------------------------------------------
-            FRONT CROSSED TUBE
+            FRONT DIAGONAL TUBE
+
+            This tube crosses toward the rear tube.
         ------------------------------------------------------- */}
 
         <img
@@ -309,26 +324,25 @@ export default function TrustData() {
           aria-hidden="true"
           className="
             absolute
-            rotate-[25deg]
 
-            right-[30px]
-            top-[40%]
+            right-[-65px]
+            top-[45%]
             w-[170px]
 
-            md:right-[60px]
-            md:top-[42%]
+            md:right-[-50px]
+            md:top-[44%]
             md:w-[220px]
 
-            lg:right-[90px]
-            lg:top-[44%]
+            lg:right-[-30px]
+            lg:top-[42%]
             lg:w-[280px]
 
-            xl:right-[120px]
-            xl:top-[42%]
+            xl:right-[-15px]
+            xl:top-[40%]
             xl:w-[320px]
 
-            2xl:right-[150px]
-            2xl:top-[40%]
+            2xl:right-[0px]
+            2xl:top-[38%]
             2xl:w-[350px]
           "
         />
@@ -344,22 +358,15 @@ export default function TrustData() {
           z-20
           mx-auto
           flex
-          h-full
           min-h-[70vh]
           w-full
           max-w-7xl
+          flex-grow
           flex-col
           justify-between
           px-6
         "
       >
-        {/* Editorial Top Line with Arrow Button */}
-        <div className="w-full relative mt-8 mb-12">
-          <div className="w-full h-px bg-black/20" />
-          <button className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg">
-            <span className="text-xl leading-none">&rarr;</span>
-          </button>
-        </div>
         {/* =======================================================
             HEADING
         ======================================================= */}

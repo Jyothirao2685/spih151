@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { Bot } from "lucide-react";
+import AnimatedBackground from "@/components/animated-background";
 
 export default function LaunchPage() {
   return (
     <div className="w-full min-h-screen bg-[#f4f4f4] flex flex-col items-center justify-center font-sans p-6 text-center relative overflow-hidden">
-      {/* Background Blobs for styling consistency */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-cyan-300 rounded-full blur-[150px] opacity-30 pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-300 rounded-full blur-[150px] opacity-20 pointer-events-none" />
+      <AnimatedBackground />
 
       <div className="relative z-10 flex flex-col items-center">
         <div className="bg-white/60 backdrop-blur-xl p-8 rounded-full border border-white/80 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] mb-8">

@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Features() {
   return (
-    <section id="features" className="relative w-full min-h-screen bg-[#f4f4f4] py-32 flex flex-col font-sans border-t border-gray-200">
-      {/* Background Blobs */}
-      <div className="absolute top-[20%] left-[-10%] w-[800px] h-[800px] bg-blue-600 rounded-full blur-[200px] opacity-10 pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-cyan-500 rounded-full blur-[150px] opacity-20 pointer-events-none" />
+    <section id="features" className="relative w-full min-h-screen bg-transparent py-32 flex flex-col font-sans border-t border-gray-200">
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
         
@@ -43,12 +40,21 @@ export default function Features() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col  pt-8"
+            className="flex flex-row gap-6 pt-8"
           >
-            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Biomedical Q&A</h3>
-            <p className="text-[#455f6e] text-xl leading-relaxed">
-              Ask questions about diseases, compounds and research.
-            </p>
+            <motion.div 
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="w-[2px] bg-black shrink-0"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Biomedical Q&A</h3>
+              <p className="text-[#455f6e] text-xl leading-relaxed">
+                Ask questions about diseases, compounds and research.
+              </p>
+            </div>
           </motion.div>
 
           {/* Feature 2 */}
@@ -57,12 +63,21 @@ export default function Features() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col  pt-8"
+            className="flex flex-row gap-6 pt-8"
           >
-            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Compound Intelligence</h3>
-            <p className="text-[#455f6e] text-xl leading-relaxed">
-              Explore compound properties, targets and research.
-            </p>
+            <motion.div 
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="w-[2px] bg-black shrink-0"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Compound Intelligence</h3>
+              <p className="text-[#455f6e] text-xl leading-relaxed">
+                Explore compound properties, targets and research.
+              </p>
+            </div>
           </motion.div>
 
           {/* Feature 3 */}
@@ -71,12 +86,21 @@ export default function Features() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col  pt-8"
+            className="flex flex-row gap-6 pt-8"
           >
-            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Evidence & Sources</h3>
-            <p className="text-[#455f6e] text-xl leading-relaxed">
-              See the data and sources used to generate an answer.
-            </p>
+            <motion.div 
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="w-[2px] bg-black shrink-0"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Evidence & Sources</h3>
+              <p className="text-[#455f6e] text-xl leading-relaxed">
+                See the data and sources used to generate an answer.
+              </p>
+            </div>
           </motion.div>
 
           {/* Feature 4 */}
@@ -85,12 +109,21 @@ export default function Features() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col  pt-8"
+            className="flex flex-row gap-6 pt-8"
           >
-            <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Uncertainty</h3>
-            <p className="text-[#455f6e] text-xl leading-relaxed">
-              Know when evidence is strong, limited or insufficient.
-            </p>
+            <motion.div 
+              initial={{ height: 0 }}
+              whileInView={{ height: "100%" }}
+              transition={{ duration: 1, delay: 0.7, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="w-[2px] bg-black shrink-0"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-3xl font-bold text-black mb-4 tracking-tight">Uncertainty</h3>
+              <p className="text-[#455f6e] text-xl leading-relaxed">
+                Know when evidence is strong, limited or insufficient.
+              </p>
+            </div>
           </motion.div>
 
         </div>

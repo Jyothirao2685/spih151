@@ -7,10 +7,12 @@ import EvidenceDemo from "@/components/evidence-demo";
 import ResponsibleAI from "@/components/responsible-ai";
 import CTA from "@/components/cta";
 import Footer from "@/components/footer";
+import AnimatedBackground from "@/components/animated-background";
 
 export default function Home() {
   return (
-    <main className="bg-[#f4f4f4] min-h-screen overflow-x-hidden">
+    <main className="bg-[#f4f4f4] min-h-screen overflow-x-hidden relative">
+      <AnimatedBackground />
       <Hero />
       <TrustData />
       <Problem />

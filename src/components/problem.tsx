@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Problem() {
   return (
-    <section className="relative w-full min-h-screen bg-[#f4f4f4]  py-32 flex flex-col font-sans ">
-      {/* Background Blobs - positioned differently from trust-data to create flow */}
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-blue-500 rounded-full blur-[150px] opacity-20 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-300 rounded-full blur-[130px] opacity-20 pointer-events-none" />
-
+    <section className="relative w-full min-h-screen bg-transparent py-32 flex flex-col font-sans">
       <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
         
         {/* Header */}
@@ -42,8 +38,15 @@ export default function Problem() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col  pt-8"
+            className="flex flex-col pt-8"
           >
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="h-[2px] bg-black mb-6"
+            />
             <span className="text-4xl lg:text-5xl font-light text-black/30 mb-6 font-serif">01</span>
             <h3 className="text-2xl font-bold text-black mb-4 tracking-tight leading-tight">Too much information</h3>
             <p className="text-[#455f6e] text-lg leading-relaxed">
@@ -57,8 +60,15 @@ export default function Problem() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col  pt-8"
+            className="flex flex-col pt-8"
           >
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="h-[2px] bg-black mb-6"
+            />
             <span className="text-4xl lg:text-5xl font-light text-black/30 mb-6 font-serif">02</span>
             <h3 className="text-2xl font-bold text-black mb-4 tracking-tight leading-tight">Data is scattered</h3>
             <p className="text-[#455f6e] text-lg leading-relaxed">
@@ -72,8 +82,15 @@ export default function Problem() {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col  pt-8"
+            className="flex flex-col pt-8"
           >
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 1, delay: 0.7, ease: "easeInOut" }}
+              viewport={{ once: true }}
+              className="h-[2px] bg-black mb-6"
+            />
             <span className="text-4xl lg:text-5xl font-light text-black/30 mb-6 font-serif">03</span>
             <h3 className="text-2xl font-bold text-black mb-4 tracking-tight leading-tight">AI can hallucinate</h3>
             <p className="text-[#455f6e] text-lg leading-relaxed">

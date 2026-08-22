@@ -4,10 +4,7 @@ import { motion } from "framer-motion";
 
 export default function ResponsibleAI() {
   return (
-    <section className="relative w-full min-h-screen bg-[#f4f4f4]  py-32 flex flex-col font-sans ">
-      {/* Background Blobs */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[800px] h-[800px] bg-blue-400 rounded-full blur-[200px] opacity-10 pointer-events-none" />
-
+    <section className="relative w-full min-h-screen bg-transparent py-32 flex flex-col font-sans">
       <div className="max-w-7xl mx-auto px-6 w-full relative z-20 flex flex-col justify-between h-full">
         
         {/* Header */}
