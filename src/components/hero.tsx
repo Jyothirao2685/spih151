@@ -14,9 +14,6 @@ export default function Hero() {
         {/* Background Blobs */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-cyan-200 rounded-full blur-[150px] opacity-40 pointer-events-none" />
         <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-blue-200 rounded-full blur-[150px] opacity-30 pointer-events-none" />
-        
-        {/* Scientific Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
         {/* DNA Background Image */}
         <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">

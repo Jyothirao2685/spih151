@@ -223,12 +223,10 @@ export default function TrustData() {
       "
     >
       {/* =========================================================
-          BACKGROUND GLOWS & GRID
+          BACKGROUND GLOWS
       ========================================================= */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {/* Scientific Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
         {/* Blue glow */}
         <div
           className="
@@ -239,16 +237,15 @@ export default function TrustData() {
             w-[500px]
             rounded-full
             bg-blue-600
-            opacity-30
+            opacity-40
             blur-[120px]
           "
         />
-
         {/* Cyan glow */}
         <div
           className="
             absolute
-            right-[-100px]
+            right-0
             top-1/2
             h-[500px]
             w-[500px]
@@ -259,40 +256,14 @@ export default function TrustData() {
             blur-[120px]
           "
         />
-
-        {/* Meeting glow */}
-        <div
-          ref={glowRef}
-          className="
-            absolute
-            right-[7%]
-            top-[43%]
-            h-32
-            w-32
-            rounded-full
-            bg-cyan-300
-            blur-3xl
-          "
-        />
       </div>
 
       {/* =========================================================
-          TEST TUBES
+          TUBES
       ========================================================= */}
-
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-0
-          z-10
-          overflow-visible
-        "
-      >
+      <div className="pointer-events-none absolute inset-0 z-[9999]">
         {/* -------------------------------------------------------
-            BACK / BORDERLESS TUBE
-
-            This is pushed right against the edge.
+            BACK TUBE
         ------------------------------------------------------- */}
 
         <img
@@ -302,34 +273,33 @@ export default function TrustData() {
           aria-hidden="true"
           className="
             absolute
-            blur-[12px]
-            opacity-60
+            blur-[8px]
+            opacity-70
+            -rotate-[15deg]
 
-            right-[-65px]
-            top-[9%]
+            right-[-30px]
+            top-[15%]
             w-[200px]
 
-            md:right-[-55px]
-            md:top-[10%]
+            md:right-[-20px]
+            md:top-[12%]
             md:w-[270px]
 
-            lg:right-[-45px]
-            lg:top-[9%]
+            lg:right-[-10px]
+            lg:top-[10%]
             lg:w-[340px]
 
-            xl:right-[-35px]
-            xl:top-[7%]
+            xl:right-[10px]
+            xl:top-[8%]
             xl:w-[390px]
 
-            2xl:right-[-25px]
+            2xl:right-[40px]
             2xl:w-[420px]
           "
         />
 
         {/* -------------------------------------------------------
-            FRONT DIAGONAL TUBE
-
-            This tube crosses toward the rear tube.
+            FRONT CROSSED TUBE
         ------------------------------------------------------- */}
 
         <img
@@ -339,25 +309,26 @@ export default function TrustData() {
           aria-hidden="true"
           className="
             absolute
+            rotate-[25deg]
 
-            right-[-65px]
-            top-[45%]
+            right-[30px]
+            top-[40%]
             w-[170px]
 
-            md:right-[-50px]
-            md:top-[44%]
+            md:right-[60px]
+            md:top-[42%]
             md:w-[220px]
 
-            lg:right-[-30px]
-            lg:top-[42%]
+            lg:right-[90px]
+            lg:top-[44%]
             lg:w-[280px]
 
-            xl:right-[-15px]
-            xl:top-[40%]
+            xl:right-[120px]
+            xl:top-[42%]
             xl:w-[320px]
 
-            2xl:right-[0px]
-            2xl:top-[38%]
+            2xl:right-[150px]
+            2xl:top-[40%]
             2xl:w-[350px]
           "
         />
@@ -373,15 +344,22 @@ export default function TrustData() {
           z-20
           mx-auto
           flex
+          h-full
           min-h-[70vh]
           w-full
           max-w-7xl
-          flex-grow
           flex-col
           justify-between
           px-6
         "
       >
+        {/* Editorial Top Line with Arrow Button */}
+        <div className="w-full relative mt-8 mb-12">
+          <div className="w-full h-px bg-black/20" />
+          <button className="absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg">
+            <span className="text-xl leading-none">&rarr;</span>
+          </button>
+        </div>
         {/* =======================================================
             HEADING
         ======================================================= */}
