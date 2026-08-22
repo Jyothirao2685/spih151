@@ -43,9 +43,11 @@ export default function Hero() {
           </div>
           
           <div className="flex items-center justify-end">
-            <button className="flex items-center gap-2 bg-black text-white rounded-full px-6 py-3 text-xs font-bold hover:bg-gray-800 transition tracking-wider shadow-sm">
-              LAUNCH APP <span className="font-light">&rarr;</span>
-            </button>
+            <Link href="/launch">
+              <button className="flex items-center gap-2 bg-black text-white rounded-full px-6 py-3 text-xs font-bold hover:bg-gray-800 transition tracking-wider shadow-sm">
+                LAUNCH APP <span className="font-light">&rarr;</span>
+              </button>
+            </Link>
           </div>
         </header>
 
