@@ -223,10 +223,12 @@ export default function TrustData() {
       "
     >
       {/* =========================================================
-          BACKGROUND GLOWS
+          BACKGROUND GLOWS & GRID
       ========================================================= */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Scientific Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
         {/* Blue glow */}
         <div
           className="
@@ -295,12 +297,13 @@ export default function TrustData() {
 
         <img
           ref={tubeBackRef}
-          src="/tube_1.png"
+          src="/tube_2.png"
           alt=""
           aria-hidden="true"
-          style={{ maskImage: "radial-gradient(ellipse at center, black 65%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 65%, transparent 100%)" }}
           className="
             absolute
+            blur-[12px]
+            opacity-60
 
             right-[-65px]
             top-[9%]
@@ -334,7 +337,6 @@ export default function TrustData() {
           src="/tube_2.png"
           alt=""
           aria-hidden="true"
-          style={{ maskImage: "radial-gradient(ellipse at center, black 75%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 75%, transparent 100%)" }}
           className="
             absolute
 
