@@ -61,7 +61,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-6xl md:text-8xl lg:text-[110px] font-medium tracking-tighter leading-[0.92] text-center text-black"
             >
-              Biomedical
+              Biomedical AI
               <br />
               Research Assistant
             </motion.h1>
@@ -72,7 +72,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="mt-8 text-xl md:text-2xl text-[#455f6e] text-center max-w-2xl leading-relaxed"
             >
-              Explore biomedical research and compound data with AI grounded in real scientific evidence.
+              Ask biomedical questions. Get evidence-backed answers from PubMed and ChEMBL.
             </motion.p>
 
             <motion.div
@@ -81,14 +81,13 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="mt-8 flex items-center justify-center gap-4 text-sm font-bold tracking-widest text-[#007b8f] uppercase"
             >
-              <span>PubMed</span>
+              <span>PUBMED</span>
               <span>&middot;</span>
-              <span>ChEMBL</span>
+              <span>CHEMBL</span>
               <span>&middot;</span>
-              <span>Evidence-Based</span>
+              <span>EVIDENCE-GROUNDED</span>
             </motion.div>
           </div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

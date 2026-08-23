@@ -68,7 +68,7 @@ export default function HowItWorks() {
           className="mt-24 pt-12  w-full"
         >
           <p className="text-2xl md:text-3xl lg:text-4xl font-medium text-black leading-tight max-w-4xl tracking-tight">
-            BioMindQ retrieves relevant biomedical data, analyzes it with AI, and shows the sources behind the answer.
+            BioMindQ retrieves real biomedical evidence, analyzes it with AI, and shows the sources behind every answer.
           </p>
         </motion.div>
 
